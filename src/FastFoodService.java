@@ -9,10 +9,8 @@ public interface FastFoodService extends Remote {
     void addItem(String item) throws RemoteException;
     double checkout() throws RemoteException;
     void logout() throws RemoteException;
-
     String getDeliveryAddress() throws RemoteException;
-
     List<String> getSelectedItems() throws RemoteException;
-
     double getPrice(String item) throws RemoteException;
+    double processPayment(String clientName, double amountPaid) throws RemoteException;
 }
