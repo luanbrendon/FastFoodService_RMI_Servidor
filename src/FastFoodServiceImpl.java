@@ -51,6 +51,7 @@ public class FastFoodServer extends UnicastRemoteObject implements FastFoodServi
     public void addItem(String item) throws RemoteException {
         selectedItems.add(item);
         totalAmount += getPrice(item);
+        System.out.println("Item adicionado: " + item + ", Preço: " + getPrice(item) + ", Total atual: " + totalAmount);
     }
 
     @Override
@@ -77,29 +78,27 @@ public class FastFoodServer extends UnicastRemoteObject implements FastFoodServi
     }
 
     @Override
+    public void selectItem() throws RemoteException {
+        List<String> availableItems = getAvailableItems();
+        String[] options = availableItems.toArray(new String[0]);
+        int choice = JOptionPane.showOptionDialog(null, "Selecione um item:", "Fast Food App - Seleção de Item", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+
+        if (choice >= 0 && choice < availableItems.size()) {
+            String selectedItem = availableItems.get(choice);
+            addItem(selectedItem);
+            System.out.println("Itens selecionados: " + getSelectedItems());
+        }
+    }
+
+    @Override
     public double getPrice(String item) throws RemoteException {
         return menu.getOrDefault(item, 0.0);
     }
 
     @Override
     public double processPayment(String clientName, double amountPaid) throws RemoteException {
-        double change = amountPaid - totalAmount; // Calcula o troco
-
-        if (change >= 0) {
-            // Pagamento completo, há troco a ser dado
-            // Realize aqui ações adicionais necessárias, como registrar o pagamento no sistema, imprimir o comprovante, etc.
-
-            // Reiniciar a lista de itens selecionados e o valor total
-            selectedItems.clear();
-            deliveryAddress = "";
-            totalAmount = 0.0;
-
-            return change; // Retorna o valor do troco
-        } else {
-            // Pagamento insuficiente, não há troco a ser dado
-            // Aqui você pode realizar ações adicionais, como exibir uma mensagem de erro, registrar o pagamento parcial, etc.
-
-            return -1; // Retorna um valor negativo para indicar que o pagamento foi insuficiente
-        }
+        double change = amountPaid - totalAmount;
+        totalAmount = 0.0; // Reinicializa o totalAmount após o pagamento ser processado
+        return change;
     }
 }
