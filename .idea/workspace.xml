@@ -4,10 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7069f3d5-6604-4a72-a61d-f7f4ecbf0e1b" name="Changes" comment="Criacao">
+    <list default="true" id="7069f3d5-6604-4a72-a61d-f7f4ecbf0e1b" name="Changes" comment="Mudancas foram feitas e erros aconteceram (tem que arrumar o erro do troco)">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/FastFoodServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodServer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FastFoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/FastFoodServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,19 +28,41 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="76dd9c1a-17d4-4317-bc6f-1ec5c4a03cdb" />
+        <option name="url" value="https://github.com/luanbrendon/FastFoodService_RMI_Servidor.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
   <component name="ProjectId" id="2QJ4PJckBInDSdUFHERKSUE8Ghv" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "fileTemplates"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="ExtractSuperBase.RECENT_KEYS">
+      <recent name="" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -54,7 +79,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685304562713</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Mudancas foram feitas e erros aconteceram (tem que arrumar o erro do troco)">
+      <created>1685663585023</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1685663585023</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -70,6 +102,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Criacao" />
-    <option name="LAST_COMMIT_MESSAGE" value="Criacao" />
+    <MESSAGE value="Mudancas foram feitas e erros aconteceram (tem que arrumar o erro do troco)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Mudancas foram feitas e erros aconteceram (tem que arrumar o erro do troco)" />
   </component>
 </project>
