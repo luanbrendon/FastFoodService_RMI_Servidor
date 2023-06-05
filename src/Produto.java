@@ -17,3 +17,4 @@ public class Produto implements Serializable {
         return preco;
     }
 }
+asd
