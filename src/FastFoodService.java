@@ -7,5 +7,7 @@ public interface FastFoodService extends Remote {
     void selectItem(Produto produto) throws RemoteException;
     List<Produto> getSelectedItems() throws RemoteException;
     double getTotalAmount() throws RemoteException;
+    String getSelectedItemsString() throws RemoteException;
     void pay(double amountPaid) throws RemoteException;
+  //public static void logado() throws RemoteException;
 }

@@ -1,3 +1,4 @@
+import javax.swing.*;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.ArrayList;
@@ -19,6 +20,8 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
 
     public void selectItem(Produto produto) throws RemoteException {
         selectedItems.add(produto);
+        String itemSelectedString = getItemSelectedString(produto);
+        System.out.println("Item selecionado: " + itemSelectedString);
     }
 
     public List<Produto> getSelectedItems() throws RemoteException {
@@ -33,8 +36,14 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
         return totalAmount;
     }
 
-    private String getSelectedItemsString() {
+  public String getSelectedItemsString() throws RemoteException {
         StringBuilder sb = new StringBuilder();
+        int itemCount = selectedItems.size();
+        if (itemCount == 0) {
+            sb.append("Nenhum item selecionado");
+        } else {
+            sb.append(itemCount).append(" itens selecionados:\n");
+        }
         for (Produto produto : selectedItems) {
             sb.append(produto.getNome()).append(" - R$ ").append(produto.getPreco()).append("\n");
         }
@@ -55,4 +64,16 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
             selectedItems.clear();
         }
     }
+
+    private String getItemSelectedString(Produto produto) {
+        return produto.getNome() + " - R$ " + produto.getPreco();
+    }
+
+
+
+//    public static void logado() throws RemoteException {
+//        JOptionPane.showMessageDialog(null, "Logando");
+//    }
+
+
 }
