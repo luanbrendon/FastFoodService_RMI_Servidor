@@ -30,7 +30,7 @@ public class ServerMain {
             itensDisponiveis.add(new Produto("Petit Gateau", 12.50));
 
 
-            FastFoodService fastFoodService = new FastFoodServiceImpl(itensDisponiveis);
+            FastFoodService fastFoodService = FastFoodServiceImpl.getInstance(itensDisponiveis);
             Registry registry = LocateRegistry.createRegistry(4444);
             registry.rebind("FastFoodService", fastFoodService);
 

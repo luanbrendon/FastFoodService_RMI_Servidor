@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7069f3d5-6604-4a72-a61d-f7f4ecbf0e1b" name="Changes" comment="tentando adicionar novo  metodo de pagamento">
+    <list default="true" id="7069f3d5-6604-4a72-a61d-f7f4ecbf0e1b" name="Changes" comment="adicionei metodo para retornar os itens no servidor">
+      <change afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FastFoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FastFoodServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Produto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Produto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/ServerMain.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/ServerMain.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +101,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1685058326111</updated>
-      <workItem from="1686346899320" duration="6453000" />
+      <workItem from="1686346899320" duration="16068000" />
     </task>
     <task id="LOCAL-00001" summary="Criacao">
       <created>1685304562713</created>
@@ -116,7 +117,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685663585023</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="adicionei metodo para retornar os itens no servidor">
+      <created>1686353995489</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1686353995489</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -136,6 +144,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Criacao" />
     <MESSAGE value="Mudancas foram feitas e erros aconteceram (tem que arrumar o erro do troco)" />
-    <option name="LAST_COMMIT_MESSAGE" value="Mudancas foram feitas e erros aconteceram (tem que arrumar o erro do troco)" />
+    <MESSAGE value="adicionei metodo para retornar os itens no servidor" />
+    <option name="LAST_COMMIT_MESSAGE" value="adicionei metodo para retornar os itens no servidor" />
   </component>
 </project>

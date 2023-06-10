@@ -1,10 +1,23 @@
 import javax.swing.*;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFoodService {
+
+    ArrayList<Usuario> usuarios = new ArrayList<Usuario>(){{
+        add(new Usuario("admin", "admin"));
+        add(new Usuario("Allan", "Allan123"));
+        add(new Usuario("Alvaro", "Alvaro123"));
+        add(new Usuario("Luan", "Luan123"));
+        add(new Usuario("Thor", "Thor123"));
+    }};
+
+    private static FastFoodServiceImpl instance;
     private List<Produto> itensDisponiveis;
     private List<Produto> selectedItems;
 
@@ -12,6 +25,13 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
         super();
         this.itensDisponiveis = itensDisponiveis;
         this.selectedItems = new ArrayList<>();
+    }
+
+    public static synchronized FastFoodServiceImpl getInstance(List<Produto> itensDisponiveis) throws RemoteException {
+        if (instance == null) {
+            instance = new FastFoodServiceImpl(itensDisponiveis);
+        }
+        return instance;
     }
 
     public List<Produto> getItensDisponiveis() throws RemoteException {
@@ -65,15 +85,37 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
         }
     }
 
+
+    @Override
+    public boolean verificarLogin(String usuario, String senha) throws RemoteException {
+        usuarios.get(0);
+        for (int i = 0; i < usuarios.size(); i++) {
+
+
+            if (usuario.isEmpty() || senha.isEmpty()) {
+                return false;
+            }
+
+            if (usuario.equals(usuarios.get(i).getUsuario())) {
+                if (senha.equals(usuarios.get(i).getSenha())) {
+                    informarServidor(usuario);
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+    @Override
+    public void informarServidor(String usuario) throws RemoteException {
+        System.out.println("Usuário " + usuario + " fez login.");
+    }
+
+
     private String getItemSelectedString(Produto produto) {
         return produto.getNome() + " - R$ " + produto.getPreco();
     }
 
-
-
-//    public static void logado() throws RemoteException {
-//        JOptionPane.showMessageDialog(null, "Logando");
-//    }
 
 
 }

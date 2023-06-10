@@ -9,5 +9,6 @@ public interface FastFoodService extends Remote {
     double getTotalAmount() throws RemoteException;
     String getSelectedItemsString() throws RemoteException;
     void pay(double amountPaid) throws RemoteException;
-  //public static void logado() throws RemoteException;
+    boolean verificarLogin(String usuario, String senha) throws RemoteException;
+    void informarServidor(String usuario) throws RemoteException;
 }
