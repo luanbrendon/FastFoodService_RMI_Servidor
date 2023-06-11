@@ -11,7 +11,7 @@ public interface FastFoodService extends Remote {
     void pay(double amountPaid) throws RemoteException;
     boolean verificarLogin(String usuario, String senha) throws RemoteException;
     void informarServidor(String usuario) throws RemoteException;
-    boolean cadastrarUsuario(String usuario, String senha) throws RemoteException; // Servico para cadastro de novos usuarios
+    boolean cadastrarUsuario(String usuario, String senha, String endereco) throws RemoteException; // Servico para cadastro de novos usuarios
 
 
 }

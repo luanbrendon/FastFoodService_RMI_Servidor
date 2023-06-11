@@ -12,11 +12,11 @@ import java.util.Map;
 public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFoodService {
 
     ArrayList<Usuario> usuarios = new ArrayList<Usuario>(){{
-        add(new Usuario("admin", "admin"));
-        add(new Usuario("Allan", "Allan123"));
-        add(new Usuario("Alvaro", "Alvaro123"));
-        add(new Usuario("Luan", "Luan123"));
-        add(new Usuario("Thor", "Thor123"));
+        add(new Usuario("admin", "admin", "home"));
+        add(new Usuario("Allan", "Allan123", "Crystal lake"));
+        add(new Usuario("Alvaro", "Alvaro123", "algum lugar por ai"));
+        add(new Usuario("Luan", "Luan123", "planeta marte"));
+        add(new Usuario("Thor", "Thor123", "Asgard"));
     }};
 
     private static FastFoodServiceImpl instance;
@@ -82,6 +82,9 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
             System.out.println("Cliente: " + nomeUsuarioLogado);
             System.out.println("Data: " + LocalDate.now());
             System.out.println("Hora: " + LocalTime.now());
+            //obtem o endereco do usuario logado
+            String endereco = getEnderecoUsuario(nomeUsuarioLogado);
+            System.out.println("Endereço de entrega: " + endereco );
             System.out.println("-------------------------------");
             System.out.println("Itens do pedido:");
             System.out.println(getSelectedItemsString());
@@ -120,20 +123,32 @@ private String nomeUsuarioLogado;
     }
 
     @Override
-    public boolean cadastrarUsuario(String usuario, String senha) throws RemoteException {
+    public boolean cadastrarUsuario(String usuario, String senha, String endereco) throws RemoteException {
         for (Usuario u : usuarios) {
             if (u.getUsuario().equals(usuario)) {
                 return false; // Usuário já cadastrado
             }
         }
-        usuarios.add(new Usuario(usuario, senha));
-        informarServidor(usuario);
+        usuarios.add(new Usuario(usuario, senha, endereco));
         return true; // Cadastro realizado com sucesso
     }
 
 
     private String getItemSelectedString(Produto produto) {
         return produto.getNome() + " - R$ " + produto.getPreco();
+    }
+
+    private String getEnderecoUsuario(String usuario) {
+        // Itera sobre cada objeto Usuario na lista de usuarios
+        for (Usuario u : usuarios) {
+            // Verifica se o nome de usuário (usuario) fornecido é igual ao nome de usuário do objeto Usuario atual (u.getUsuario())
+            if (u.getUsuario().equals(usuario)) {
+                // Se for encontrado um objeto Usuario com o nome de usuário correspondente, retorna o endereço desse usuário
+                return u.getEndereco();
+            }
+        }
+        // Se nenhum objeto Usuario for encontrado com o nome de usuário correspondente, retorna uma string vazia ("")
+        return "";
     }
 
 

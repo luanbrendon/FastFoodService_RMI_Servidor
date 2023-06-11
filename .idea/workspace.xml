@@ -4,10 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="7069f3d5-6604-4a72-a61d-f7f4ecbf0e1b" name="Changes" comment="mudancas no cupom fiscal">
+    <list default="true" id="7069f3d5-6604-4a72-a61d-f7f4ecbf0e1b" name="Changes" comment="mudancas para um cadastro eficiente">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FastFoodService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/FastFoodServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/FastFoodServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Usuario.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +105,8 @@
       <option name="presentableId" value="Default" />
       <updated>1685058326111</updated>
       <workItem from="1686346899320" duration="16390000" />
-      <workItem from="1686436493951" duration="11908000" />
+      <workItem from="1686436493951" duration="12966000" />
+      <workItem from="1686493414555" duration="2769000" />
     </task>
     <task id="LOCAL-00001" summary="Criacao">
       <created>1685304562713</created>
@@ -148,7 +150,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686441755489</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="mudancas para um cadastro eficiente">
+      <created>1686455601378</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1686455601378</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +180,7 @@
     <MESSAGE value="adicionei metodo para retornar os itens no servidor" />
     <MESSAGE value="mudancas e adicionei a logica para o login" />
     <MESSAGE value="mudancas no cupom fiscal" />
-    <option name="LAST_COMMIT_MESSAGE" value="mudancas no cupom fiscal" />
+    <MESSAGE value="mudancas para um cadastro eficiente" />
+    <option name="LAST_COMMIT_MESSAGE" value="mudancas para um cadastro eficiente" />
   </component>
 </project>
