@@ -31,6 +31,8 @@ public class ServerMain {
 
 
             FastFoodService fastFoodService = FastFoodServiceImpl.getInstance(itensDisponiveis);
+
+
             Registry registry = LocateRegistry.createRegistry(4444);
             registry.rebind("FastFoodService", fastFoodService);
 

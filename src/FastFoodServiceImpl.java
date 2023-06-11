@@ -2,6 +2,8 @@ import javax.swing.*;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 import java.sql.SQLOutput;
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -76,16 +78,24 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
         if (amountPaid < totalAmount) {
             System.out.println("Valor insuficiente. Por favor, pague o valor total da compra.");
         } else {
-            System.out.println("O valor total do cliente foi de R$ " + totalAmount);
-            System.out.println("O valor que o cliente pagou foi de R$ " + amountPaid);
+            System.out.println("========== Nota Fiscal ==========");
+            System.out.println("Cliente: " + nomeUsuarioLogado);
+            System.out.println("Data: " + LocalDate.now());
+            System.out.println("Hora: " + LocalTime.now());
+            System.out.println("-------------------------------");
+            System.out.println("Itens do pedido:");
+            System.out.println(getSelectedItemsString());
+            System.out.println("-------------------------------");
+            System.out.println("Valor total: R$ " + totalAmount);
+            System.out.println("Valor pago: R$ " + amountPaid);
             double change = amountPaid - totalAmount;
             System.out.println("Troco: R$ " + change);
-            System.out.println("Itens selecionado: \n" +getSelectedItemsString());
+            System.out.println("================================");
             selectedItems.clear();
         }
     }
 
-
+private String nomeUsuarioLogado;
     @Override
     public boolean verificarLogin(String usuario, String senha) throws RemoteException {
         usuarios.get(0);
@@ -98,6 +108,7 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
 
             if (usuario.equals(usuarios.get(i).getUsuario())) {
                 if (senha.equals(usuarios.get(i).getSenha())) {
+                    nomeUsuarioLogado = usuario;
                     informarServidor(usuario);
                     return true;
                 }
