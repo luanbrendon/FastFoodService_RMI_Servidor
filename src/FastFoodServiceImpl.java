@@ -98,28 +98,37 @@ public class FastFoodServiceImpl extends UnicastRemoteObject implements FastFood
 private String nomeUsuarioLogado;
     @Override
     public boolean verificarLogin(String usuario, String senha) throws RemoteException {
-        usuarios.get(0);
-        for (int i = 0; i < usuarios.size(); i++) {
-
-
-            if (usuario.isEmpty() || senha.isEmpty()) {
-                return false;
-            }
-
-            if (usuario.equals(usuarios.get(i).getUsuario())) {
-                if (senha.equals(usuarios.get(i).getSenha())) {
-                    nomeUsuarioLogado = usuario;
-                    informarServidor(usuario);
-                    return true;
-                }
-            }
+        if (usuario.isEmpty() || senha.isEmpty()) {
             return false;
         }
+
+        for (Usuario u : usuarios) {
+            if (usuario.equals(u.getUsuario()) && senha.equals(u.getSenha())) {
+                nomeUsuarioLogado = usuario;
+                informarServidor(usuario);
+                return true;
+            }
+        }
+
         return false;
     }
+
+
     @Override
     public void informarServidor(String usuario) throws RemoteException {
         System.out.println("Usuário " + usuario + " fez login.");
+    }
+
+    @Override
+    public boolean cadastrarUsuario(String usuario, String senha) throws RemoteException {
+        for (Usuario u : usuarios) {
+            if (u.getUsuario().equals(usuario)) {
+                return false; // Usuário já cadastrado
+            }
+        }
+        usuarios.add(new Usuario(usuario, senha));
+        informarServidor(usuario);
+        return true; // Cadastro realizado com sucesso
     }
 
 
